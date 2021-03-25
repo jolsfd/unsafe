@@ -16,7 +16,7 @@ def convert_bytes_to_password(hashed_bytes, length):
 
 def convert_hash_string_to_password(hash_string):
     hashed_bytes = pbkdf2_hmac("sha512", hash_string.encode("utf-8"), salt.encode("utf-8"), 4096)
-    password = convert_bytes_to_password(hashed_bytes, 10)
+    password = convert_bytes_to_password(hashed_bytes, 16)
     return password
 
 if __name__ == '__main__':
